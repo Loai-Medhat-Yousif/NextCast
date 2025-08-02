@@ -3,9 +3,9 @@ import 'package:nextcast/Theme/custom_colors.dart';
 
 class AppTheme {
   static ThemeData appTheme = ThemeData(
+    fontFamily: 'MaterialIcons',
     primarySwatch: Colors.blue,
     scaffoldBackgroundColor: CustomColors.primaryColor,
-    fontFamily: 'BebasNeue',
     pageTransitionsTheme: const PageTransitionsTheme(
       builders: {
         TargetPlatform.android: CupertinoPageTransitionsBuilder(),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:nextcast/Models/weather_model.dart';
 import 'package:nextcast/Theme/custom_colors.dart';
@@ -16,15 +17,16 @@ class WeatherRowHelper extends StatelessWidget {
         for (int i = 0; i < 3; i++)
           Column(
             children: [
-              Icon(
+              FaIcon(
                 List.of([
-                  Icons.device_thermostat_sharp,
-                  Icons.cloud,
-                  Icons.air,
+                  FontAwesomeIcons.temperatureHalf,
+                  FontAwesomeIcons.water,
+                  FontAwesomeIcons.wind,
                 ])[i],
-                color: CustomColors.whiteColor,
+                color: Colors.white,
                 size: 30.sp,
               ),
+              5.verticalSpace,
               Text(
                 List.of(['Feels Like', 'Humidity', 'Wind Speed'])[i],
                 style: TextStyle(

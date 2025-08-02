@@ -8,8 +8,15 @@ class WeatherService {
   final String apiKey = '52d7ed7ad9cc460582d155843252507';
   Future<Position> getCurrentLocation() async {
     bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+
     if (!serviceEnabled) {
-      throw Exception('Location services are disabled.');
+      bool opened = await Geolocator.openLocationSettings();
+      if (!opened) {
+        throw Exception('Could not open location settings.');
+      }
+      while (!await Geolocator.isLocationServiceEnabled()) {
+        await Future.delayed(const Duration(seconds: 1));
+      }
     }
 
     LocationPermission permission = await Geolocator.checkPermission();

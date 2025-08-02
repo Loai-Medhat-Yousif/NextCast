@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 part 'onboarding_view_state.dart';
 
 class OnboardingViewCubit extends Cubit<OnboardingViewState> {
-  OnboardingViewCubit() : super(OnboardingViewControl());
+  OnboardingViewCubit() : super(const OnboardingViewControl());
 
   PageController pageController = PageController(initialPage: 0);
   bool islastpage = false;

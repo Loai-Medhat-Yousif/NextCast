@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:panara_dialogs/panara_dialogs.dart';
+
 import 'package:nextcast/Controllers/Cubits/Weather_Cubits/weather_cubit.dart';
 import 'package:nextcast/Services/weather_service.dart';
 import 'package:nextcast/Theme/custom_colors.dart';
@@ -8,7 +11,6 @@ import 'package:nextcast/Views/Home_View/Widgets/forcast_widget.dart';
 import 'package:nextcast/Views/Home_View/Widgets/hourly_forcast.dart';
 import 'package:nextcast/Views/Home_View/Widgets/weather_image.dart';
 import 'package:nextcast/Views/Home_View/Widgets/weather_row_helper.dart';
-import 'package:panara_dialogs/panara_dialogs.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -56,9 +58,9 @@ class HomeView extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(
-                              Icons.location_on,
-                              color: CustomColors.whiteColor,
+                            FaIcon(
+                              FontAwesomeIcons.locationDot,
+                              color: Colors.white,
                               size: 30.sp,
                             ),
                             10.horizontalSpace,
@@ -77,7 +79,7 @@ class HomeView extends StatelessWidget {
                                   weather.country,
                                   style: TextStyle(
                                     color: CustomColors.whiteColor,
-                                    fontSize: 10.sp,
+                                    fontSize: 15.sp,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -108,7 +110,7 @@ class HomeView extends StatelessWidget {
                             style: TextStyle(
                               color: CustomColors.whiteColor,
                               fontWeight: FontWeight.bold,
-                              fontSize: 40.sp,
+                              fontSize: 50.sp,
                             ),
                           ),
                         ),
@@ -118,12 +120,12 @@ class HomeView extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 12.w),
                           child: Align(
-                            alignment: Alignment.centerLeft,
+                            alignment: Alignment.center,
                             child: Text(
                               "Forecast",
                               style: TextStyle(
                                 color: CustomColors.whiteColor,
-                                fontSize: 18.sp,
+                                fontSize: 20.sp,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -135,12 +137,12 @@ class HomeView extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 12.w),
                           child: Align(
-                            alignment: Alignment.centerLeft,
+                            alignment: Alignment.center,
                             child: Text(
                               "Hourly Forecast",
                               style: TextStyle(
                                 color: CustomColors.whiteColor,
-                                fontSize: 18.sp,
+                                fontSize: 20.sp,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -155,9 +157,9 @@ class HomeView extends StatelessWidget {
                 ),
               );
             } else if (state is WeatherError) {
-              return SizedBox.shrink();
+              return const SizedBox.shrink();
             }
-            return SizedBox.shrink();
+            return const SizedBox.shrink();
           },
         ),
       ),

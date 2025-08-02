@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _ = Icons.ac_unit;
     return ScreenUtilInit(
       designSize: const Size(360, 690),
       minTextAdapt: true,

@@ -42,6 +42,7 @@ class OnboardingContent extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 25.sp,
                       color: CustomColors.whiteColor,
+                      fontFamily: "BebasNeue",
                     ),
                   ),
                   20.verticalSpace,
@@ -55,6 +56,7 @@ class OnboardingContent extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 15.sp,
                       color: CustomColors.whiteColor,
+                      fontFamily: "BebasNeue",
                     ),
                   ),
                   20.verticalSpace,
